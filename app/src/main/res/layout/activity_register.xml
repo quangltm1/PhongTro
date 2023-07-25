@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_home"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/edt_dk_tentaikhoan"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/hop"
+        android:hint="  Nhập họ tên"
+        android:imeOptions="actionNext"
+        android:maxLength="100"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edt_dk_email"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/edt_dk_tentaikhoan"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/hop"
+        android:layout_marginTop="20dp"
+        android:hint="  Nhập email"
+        android:imeOptions="actionNext"
+        android:maxLength="100"
+
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edt_dk_password"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edt_dk_email"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/hop"
+        android:hint="  Nhập mật khẩu"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLength="100"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edt_config_password"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edt_dk_password"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/hop"
+        android:hint="  Nhập lại mật khẩu"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLength="100"
+        android:textColorHint="@color/black" />
+
+    <EditText
+        android:id="@+id/edt_dk_sdt"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/edt_config_password"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/hop"
+        android:hint="  Nhập số điện thoại"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLength="100"
+        android:textColorHint="@color/black" />
+
+    <Button
+        android:id="@+id/btn_sign_in"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_dk_sdt"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/hop"
+        android:text="Đăng ký"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:backgroundTint="#5b6c62"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_dk_sdt" />
+
+    <ImageButton
+        android:id="@+id/imbBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="22dp"
+        />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<!-- activity_nguoithue_chitiet.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Tên tài khoản -->
+    <TextView
+        android:id="@+id/tvTenNguoiThueChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentTop="true"/>
+
+    <!-- Phòng đang thuê -->
+    <TextView
+        android:id="@+id/tvPhongDangThueChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/tvTenNguoiThueChiTiet"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Số điện thoại -->
+    <TextView
+        android:id="@+id/tvSoDienThoaiChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/tvPhongDangThueChiTiet"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Button Xóa tài khoản -->
+    <Button
+        android:id="@+id/btnXoaTaiKhoanChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa tài khoản"
+        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button Reset mật khẩu -->
+    <Button
+        android:id="@+id/btnResetMatKhauChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset mật khẩu"
+        android:layout_toRightOf="@id/btnXoaTaiKhoanChiTiet"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button Chỉnh sửa -->
+    <Button
+        android:id="@+id/btnChinhSuaChiTiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chỉnh sửa"
+        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

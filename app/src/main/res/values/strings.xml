@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DemoAppNhaTro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="trang_thai_array">
+        <item>Chưa cho thuê</item>
+        <item>Đã cho thuê</item>
+        <!-- Thêm các mục khác nếu cần -->
+    </string-array>
+    <string-array name="trang_thai_values">
+        <item>0</item><!-- Giá trị tương ứng với mục "Chưa cho thuê" -->
+        <item>1</item><!-- Giá trị tương ứng với mục "Đã cho thuê" -->
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

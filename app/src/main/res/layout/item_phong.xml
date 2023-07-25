@@ -1,0 +1,72 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/img_bt_phong"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:src="@drawable/house_2"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/tv_Name_Phong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="Tên phòng"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/img_bt_phong"
+        app:layout_constraintTop_toTopOf="@id/img_bt_phong" />
+
+    <TextView
+        android:id="@+id/tv_Gia_Tien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:text="Giá tiền"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/img_bt_phong"
+        app:layout_constraintTop_toBottomOf="@id/tv_Name_Phong" />
+
+    <TextView
+        android:id="@+id/tv_Dien_Tich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:text="Diện tích"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/img_bt_phong"
+        app:layout_constraintTop_toBottomOf="@id/tv_Gia_Tien" />
+
+    <TextView
+        android:id="@+id/tv_Mo_Ta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:text="Mô tả"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/img_bt_phong"
+        app:layout_constraintTop_toBottomOf="@id/tv_Dien_Tich" />
+
+    <TextView
+        android:id="@+id/tv_Trang_Thai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:text="Trạng thái"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/img_bt_phong"
+        app:layout_constraintTop_toBottomOf="@id/tv_Mo_Ta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
