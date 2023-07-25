@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.demoappnhatro.Adapter.NguoiThueAdapter;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.TaiKhoan;
 import java.util.ArrayList;

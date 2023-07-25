@@ -1,4 +1,4 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.example.demoappnhatro.Database.TaiKhoan;
+import com.example.demoappnhatro.R;
+
 import java.util.ArrayList;
 
 public class NguoiThueAdapter extends ArrayAdapter<TaiKhoan> {

@@ -1,7 +1,6 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.UI.QuanLy;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.Database;
 import com.example.demoappnhatro.Database.TaiKhoan;
+import com.example.demoappnhatro.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.UI.ThuChi;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+
+import com.example.demoappnhatro.R;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.demoappnhatro.Database.PhongTro;
+import com.example.demoappnhatro.R;
 
 import java.util.ArrayList;
 

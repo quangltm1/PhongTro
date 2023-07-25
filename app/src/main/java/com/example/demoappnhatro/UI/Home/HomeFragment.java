@@ -1,4 +1,4 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.UI.Home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,13 +10,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.demoappnhatro.BillActivity;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.Database;
+import com.example.demoappnhatro.HopDongActivity;
+import com.example.demoappnhatro.NguoiThueActivity;
+import com.example.demoappnhatro.R;
+import com.example.demoappnhatro.SoNoActivity;
+import com.example.demoappnhatro.SuCoActivity;
+import com.example.demoappnhatro.TienCocActivity;
 
 import java.util.Calendar;
 

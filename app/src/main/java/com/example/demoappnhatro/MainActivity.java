@@ -8,8 +8,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 
+import com.example.demoappnhatro.Adapter.ViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

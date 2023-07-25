@@ -1,6 +1,5 @@
-package com.example.demoappnhatro;
+package com.example.demoappnhatro.UI.ToaNha;
 
-import static android.app.Activity.RESULT_OK;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.content.Intent;
@@ -17,8 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.demoappnhatro.AddPhongActivity;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.PhongTro;
+import com.example.demoappnhatro.PhongChiTietActivity;
+import com.example.demoappnhatro.Adapter.PhongTroAdapter;
+import com.example.demoappnhatro.R;
 
 import java.util.ArrayList;
 

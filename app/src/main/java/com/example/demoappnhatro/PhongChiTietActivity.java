@@ -13,6 +13,7 @@ import java.util.Random;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.demoappnhatro.Adapter.PhongTroAdapter;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.Database;
 import com.example.demoappnhatro.Database.PhongTro;

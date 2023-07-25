@@ -4,7 +4,7 @@
     android:id="@+id/br_day"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment"
+    tools:context=".UI.Home.HomeFragment"
     android:background="@drawable/sang">
 
     <TextView
