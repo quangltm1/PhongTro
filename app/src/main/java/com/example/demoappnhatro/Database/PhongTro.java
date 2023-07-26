@@ -92,4 +92,8 @@ public class PhongTro implements Serializable {
     public void setNguoiThueId(long taiKhoanId) {
         this.nguoiThueId = taiKhoanId;
     }
+
+    public void setTrangThaiPhong(int trangThaiPhong) {
+        this.trangThaiPhong = trangThaiPhong;
+    }
 }

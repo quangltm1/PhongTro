@@ -66,6 +66,16 @@
         android:layout_margin="8dp"/>
 
     <Button
+        android:id="@+id/btn_chothue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/teal_200"
+        android:padding="12dp"
+        android:text="Cho Thuê"
+        android:textColor="@android:color/white" />
+
+    <Button
         android:id="@+id/btn_xoaphong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
