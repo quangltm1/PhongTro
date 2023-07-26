@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HopDongActivity">
+
+    <TextView
+        android:id="@+id/tv_hd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hợp đồng"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal" />
+    <EditText
+        android:id="@+id/tv_ma_hd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="mã phòng"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/tv_hd"/>
+
+    <ImageView
+        android:id="@+id/img_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_ma_hd"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/img_phong" />
+
+    <EditText
+        android:id="@+id/tv_TenPhong_HD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_home"
+        android:layout_below="@+id/tv_ma_hd"
+        android:layout_toRightOf="@+id/img_home"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:hint="name phòng"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:padding="6dp"
+        />
+
+    <ImageView
+        android:id="@+id/img_calender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_home"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/calendar" />
+
+    <EditText
+        android:id="@+id/tv_calender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_calender"
+        android:layout_below="@+id/img_home"
+        android:layout_toRightOf="@+id/img_calender"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:hint="ngày tháng năm"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:padding="6dp"
+        />
+
+    <ImageView
+        android:id="@+id/img_nguoi_tao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_calender"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/nguoitao" />
+
+    <EditText
+        android:id="@+id/tv_nguoi_tao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_nguoi_tao"
+        android:layout_below="@+id/img_calender"
+        android:layout_toRightOf="@+id/img_nguoi_tao"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Người tạo"
+        android:textSize="20dp"
+        android:padding="6dp"
+        />
+    <ImageView
+        android:id="@+id/img_gp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/img_nguoi_tao"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tien_coc" />
+
+    <EditText
+        android:id="@+id/edt_gia_thue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/img_nguoi_tao"
+        android:layout_below="@+id/img_nguoi_tao"
+        android:layout_toRightOf="@+id/img_nguoi_tao"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Giá phòng"
+        android:textSize="20dp"
+        android:padding="6dp"
+        />
+
+    <EditText
+        android:id="@+id/HoTen_NgThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_gp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:hint="Họ và Tên người thuê"
+        />
+    <EditText
+        android:id="@+id/edt_sdt_NgThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HoTen_NgThue"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:hint="SĐT "
+        />
+    <TextView
+        android:id="@+id/mota_ngThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_sdt_NgThue"
+        android:text="Mô tả:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        />
+    <EditText
+        android:id="@+id/edt_mota_NgThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/hop"
+        android:textSize="20dp"
+        android:hint="  Nhập mô tả phòng"
+        android:layout_below="@+id/mota_ngThue"
+        android:textColor="#BBBBBB"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:lines="8"
+        android:maxLines="10"
+        android:inputType="textMultiLine"
+        android:gravity="left|top"
+        />
+
+    <Button
+        android:id="@+id/bt_Tao_Hop_Dong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/hop"
+        android:text="TẠO HỢP ĐỒNG"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        app:backgroundTint="@color/teal_200"
+        android:layout_alignParentBottom="true"
+        />
+    <ImageButton
+        android:id="@+id/img_Back_hopdong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/arrow_back"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="22dp"
+        />
+
+</RelativeLayout>
