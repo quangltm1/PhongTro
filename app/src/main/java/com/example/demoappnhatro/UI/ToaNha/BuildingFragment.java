@@ -1,5 +1,6 @@
 package com.example.demoappnhatro.UI.ToaNha;
 
+import static android.app.Activity.RESULT_OK;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.content.Intent;
@@ -32,15 +33,10 @@ import java.util.ArrayList;
  */
 public class BuildingFragment extends Fragment {
 
+    private static final int REQUEST_CODE_PHONG_CHI_TIET = 1;
     private ListView lvPhongTro;
     private ArrayList<PhongTro> mListPhongTro;
     private PhongTroAdapter mPhongTroAdapter;
-
-
-
-
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     Button btnAddBuilding;
@@ -53,8 +49,6 @@ public class BuildingFragment extends Fragment {
     private String mParam2;
 
     SQLiteDatabase db;
-
-
 
     public BuildingFragment() {
         // Required empty public constructor
@@ -85,8 +79,6 @@ public class BuildingFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
 
 
@@ -103,11 +95,10 @@ public class BuildingFragment extends Fragment {
         btnAddBuilding = view.findViewById(R.id.btn_add_building);
         lvPhongTro = view.findViewById(R.id.lv_building);
 
-        //load data tu database len listview
-        DBHelper dbHelper = new DBHelper(getContext());
-        mListPhongTro = new ArrayList<PhongTro>();
-        mListPhongTro.addAll(dbHelper.getAllPhong()); // Thêm tất cả phòng từ database vào mListPhongTro
-        mPhongTroAdapter = new PhongTroAdapter(getContext(),mListPhongTro);
+        //lay danh sach phong tu co so du lieu va them vao mListPhongTro
+        DBHelper dbHelper = new DBHelper(this.getContext());
+        mListPhongTro = dbHelper.getAllPhong(); // Lấy danh sách tài khoản có role là 1
+        mPhongTroAdapter = new PhongTroAdapter(this.getContext(),mListPhongTro);
         lvPhongTro.setAdapter(mPhongTroAdapter);
 
         //set onclick cho button add building
@@ -134,5 +125,15 @@ public class BuildingFragment extends Fragment {
         return view;
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_PHONG_CHI_TIET && resultCode == RESULT_OK) {
+            // Cập nhật lại dữ liệu trong ListView
+            DBHelper dbHelper = new DBHelper(this);
+            mListPhongTro.clear();
+            mListPhongTro.addAll(dbHelper.getAllPhong());
+            mPhongTroAdapter.notifyDataSetChanged();
+        }
+    }
 }

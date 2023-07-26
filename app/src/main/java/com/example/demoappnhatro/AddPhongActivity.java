@@ -87,6 +87,8 @@ public class AddPhongActivity extends AppCompatActivity {
                 database.addPhongTro(phongTro);
                 Toast.makeText(AddPhongActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(AddPhongActivity.this, MainActivity.class));
+                setResult(RESULT_OK);
+                finish();
             }
 
         });

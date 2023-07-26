@@ -9,6 +9,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.demoappnhatro.UI.ToaNha.BuildingFragment;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -105,6 +107,9 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
     }
 
+    public DBHelper(BuildingFragment buildingFragment) {
+           super(buildingFragment.getContext(), DATABASE_NAME, null, 1);
+    }
 
 
     @Override
