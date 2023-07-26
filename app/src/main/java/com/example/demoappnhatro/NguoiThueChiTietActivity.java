@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.demoappnhatro.Database.DBHelper;
@@ -13,9 +14,10 @@ import com.example.demoappnhatro.Database.TaiKhoan;
 
 public class NguoiThueChiTietActivity extends AppCompatActivity {
 
-    private TextView tvTenNguoiThue, tvSoDienThoai, tvPhongDangThue;
-    Button XoaNguoiThue, ResetMatKhau, SuaThongTinNguoiThue;
+    private TextView tvTenNguoiThue, tvSoDienThoai, tvPhongDangThue, tvTK, tvMK;
+    Button XoaNguoiThue, ResetMatKhau, SuaThongTinNguoiThue, XemTaiKhoan;
     private OnAccountUpdatedListener accountUpdatedListener;
+    private TaiKhoan taiKhoan;
     // Các trường dữ liệu khác của người thuê...
 
     @Override
@@ -27,15 +29,18 @@ public class NguoiThueChiTietActivity extends AppCompatActivity {
         tvTenNguoiThue = findViewById(R.id.tvTenNguoiThueChiTiet);
         tvSoDienThoai = findViewById(R.id.tvSoDienThoaiChiTiet);
         tvPhongDangThue = findViewById(R.id.tvPhongDangThueChiTiet);
+        tvTK = findViewById(R.id.tvTaiKhoan);
+        tvMK = findViewById(R.id.tvMatKhau);
         XoaNguoiThue = findViewById(R.id.btnXoaTaiKhoanChiTiet);
         ResetMatKhau = findViewById(R.id.btnResetMatKhauChiTiet);
         SuaThongTinNguoiThue = findViewById(R.id.btnChinhSuaChiTiet);
+        XemTaiKhoan = findViewById(R.id.btnXemTKMK);
         // Ánh xạ các view dữ liệu khác của người thuê...
 
         // Nhận dữ liệu từ Intent
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("taikhoan")) {
-            TaiKhoan taiKhoan = (TaiKhoan) intent.getSerializableExtra("taikhoan");
+            taiKhoan = (TaiKhoan) intent.getSerializableExtra("taikhoan");
             if (taiKhoan != null) {
                 // Hiển thị thông tin người thuê lên giao diện
                 tvTenNguoiThue.setText("Tên người thuê: " + taiKhoan.getTenDangNhap());
@@ -87,14 +92,49 @@ public class NguoiThueChiTietActivity extends AppCompatActivity {
             finish();
         });
 
-        /*// Xử lý sự kiện khi nhấn vào nút "Chỉnh sửa"
+        XemTaiKhoan.setOnClickListener(v -> {
+            // Lấy thông tin tài khoản từ Intent
+            TaiKhoan taiKhoan = (TaiKhoan) intent.getSerializableExtra("taikhoan");
+            if (taiKhoan != null) {
+                // Lưu thông tin tài khoản vào các biến
+                String tenDangNhap = taiKhoan.getTenDangNhap();
+                String matKhau = taiKhoan.getMatKhau();
+
+                // Hiển thị thông tin tài khoản và mật khẩu lên TextView
+                tvTK.setText("Tên đăng nhập: " + tenDangNhap);
+                tvMK.setText("Mật khẩu: " + matKhau);
+            }
+        });
+
+
+
+        // Xử lý sự kiện khi nhấn vào nút "Chỉnh sửa"
         SuaThongTinNguoiThue.setOnClickListener(v -> {
-            // Chuyển sang màn hình chỉnh sửa thông tin người thuê
+            // Chuyển sang màn hình chỉnh sửa thông tin người thuê và truyền thông tin tài khoản hiện tại
             Intent intentChinhSua = new Intent(NguoiThueChiTietActivity.this, ChinhSuaNguoiThueActivity.class);
             intentChinhSua.putExtra("taikhoan", taiKhoan);
-            startActivity(intentChinhSua);
-        });*/
+            startActivityForResult(intentChinhSua, 1);
+        });
+
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
+            // Nhận dữ liệu từ màn hình chỉnh sửa thông tin người thuê
+            TaiKhoan updatedTaiKhoan = (TaiKhoan) data.getSerializableExtra("updatedTaikhoan");
+            // Kiểm tra dữ liệu nhận được
+            if (updatedTaiKhoan != null) {
+                // Cập nhật thông tin tài khoản với thông tin đã được chỉnh sửa
+                taiKhoan = updatedTaiKhoan;
+                // Hiển thị lại thông tin tài khoản lên giao diện
+                tvTenNguoiThue.setText("Tên người thuê: " + taiKhoan.getTenDangNhap());
+                tvSoDienThoai.setText("Số điện thoại: " + taiKhoan.getSdt());
+            }
+        }
+    }
+
 
     public interface OnAccountUpdatedListener {
         void onAccountUpdated();

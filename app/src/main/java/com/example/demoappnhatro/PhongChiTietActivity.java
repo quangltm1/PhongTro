@@ -150,8 +150,6 @@ public class PhongChiTietActivity extends AppCompatActivity {
             }
         });
 
-
-
         btnXoaphong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -64,9 +64,9 @@ public class AddPhongActivity extends AppCompatActivity {
                 edtMoTa.setError("Mô tả không được để trống");
             } else if (!tenPhong.matches("[a-zA-Z0-9]+")) {
                 edtTenPhong.setError("Tên phòng không chứa ký tự đặc biệt hoặc trống");
-            } else if (!tienDatCoc.matches("[0-9]+")) {
+            } else if (!tienDatCoc.matches("[0-9]+") || tienDatCoc.length()>1000) {
                 edtTienDatCoc.setError("Tiền đặt cọc không chứa ký tự đặc biệt hoặc trống");
-            } else if (!giaPhong.matches("[0-9]+")) {
+            } else if (!giaPhong.matches("[0-9]+") || giaPhong.length()>1000) {
                 edtGiaPhong.setError("Giá phòng không chứa ký tự đặc biệt hoặc trống");
             } else if (!dienTich.matches("[0-9]+")) {
                 edtDienTich.setError("Diện tích không chứa ký tự đặc biệt hoặc trống");

@@ -34,13 +34,33 @@
         android:layout_below="@id/tvPhongDangThueChiTiet"
         android:layout_marginTop="8dp"/>
 
+    <!-- TextView Hiển thị thông tin tài khoản -->
+    <TextView
+        android:id="@+id/tvTaiKhoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_marginTop="16dp"/>
+
+    <!-- TextView Hiển thị thông tin mật khẩu -->
+    <TextView
+        android:id="@+id/tvMatKhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/tvTaiKhoan"
+        android:layout_marginTop="8dp"/>
+
     <!-- Button Xóa tài khoản -->
     <Button
         android:id="@+id/btnXoaTaiKhoanChiTiet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Xóa tài khoản"
-        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_below="@id/tvMatKhau"
         android:layout_marginTop="16dp"/>
 
     <!-- Button Reset mật khẩu -->
@@ -51,7 +71,7 @@
         android:text="Reset mật khẩu"
         android:layout_toRightOf="@id/btnXoaTaiKhoanChiTiet"
         android:layout_marginLeft="16dp"
-        android:layout_below="@id/tvSoDienThoaiChiTiet"
+        android:layout_below="@id/tvMatKhau"
         android:layout_marginTop="16dp"/>
 
     <!-- Button Chỉnh sửa -->
@@ -60,8 +80,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chỉnh sửa"
-        android:layout_below="@id/tvSoDienThoaiChiTiet"
-        android:layout_alignParentRight="true"
+        android:layout_below="@id/btnResetMatKhauChiTiet"
+        android:layout_toRightOf="@id/btnXemTKMK"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Button Xem thông tin tài khoản và mật khẩu -->
+    <Button
+        android:id="@+id/btnXemTKMK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xem tài khoản"
+        android:layout_below="@id/btnXoaTaiKhoanChiTiet"
+        android:layout_alignParentLeft="true"
         android:layout_marginTop="16dp"/>
 
 </RelativeLayout>
