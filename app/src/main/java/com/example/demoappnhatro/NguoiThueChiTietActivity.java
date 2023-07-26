@@ -110,10 +110,17 @@ public class NguoiThueChiTietActivity extends AppCompatActivity {
 
         // Xử lý sự kiện khi nhấn vào nút "Chỉnh sửa"
         SuaThongTinNguoiThue.setOnClickListener(v -> {
-            // Chuyển sang màn hình chỉnh sửa thông tin người thuê và truyền thông tin tài khoản hiện tại
-            Intent intentChinhSua = new Intent(NguoiThueChiTietActivity.this, ChinhSuaNguoiThueActivity.class);
-            intentChinhSua.putExtra("taikhoan", taiKhoan);
-            startActivityForResult(intentChinhSua, 1);
+            // Lấy thông tin tài khoản từ Intent
+            TaiKhoan taiKhoan = (TaiKhoan) intent.getSerializableExtra("taikhoan");
+            if (taiKhoan != null) {
+                // Lưu thông tin tài khoản vào các biến
+                String tenDangNhap = taiKhoan.getTenDangNhap();
+
+                // Chuyển sang màn hình chỉnh sửa thông tin người thuê và truyền thông tin tài khoản hiện tại
+                Intent intentChinhSua = new Intent(NguoiThueChiTietActivity.this, ChinhSuaNguoiThueActivity.class);
+                intentChinhSua.putExtra("taikhoan", taiKhoan);
+                startActivity(intentChinhSua);
+            }
         });
 
     }

@@ -36,6 +36,9 @@
             android:name=".SuCoActivity"
             android:exported="false" />
         <activity
+            android:name=".ChinhSuaNguoiThueActivity"
+            android:exported="false" />
+        <activity
             android:name=".TienCocActivity"
             android:exported="false" />
         <activity

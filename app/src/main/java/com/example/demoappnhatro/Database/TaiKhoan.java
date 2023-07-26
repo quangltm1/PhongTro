@@ -14,6 +14,12 @@ public class TaiKhoan implements Serializable {
 
     }
 
+    public TaiKhoan(String tenNguoiThue, String soDienThoai, String matKhau) {
+        this.tenNguoiDung = tenNguoiThue;
+        this.sdt = soDienThoai;
+        this.matKhau = matKhau;
+    }
+
     public long getPhongTroId() {
         return phongTroId;
     }
