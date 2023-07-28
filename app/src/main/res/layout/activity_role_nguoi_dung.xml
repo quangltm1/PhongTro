@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoleNguoiDungActivity"
+    android:background="@drawable/morning"
+    >
+
+    <TextView
+        android:id="@+id/tv_xinChao_nd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:textColor="@color/black"
+        android:text="Good morning!"
+        android:textSize="23dp"
+        />
+    <RelativeLayout
+        android:id="@+id/layout_thongtin_nd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_xinChao_nd"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/hop"
+        >
+        <TextView
+            android:id="@+id/tv_ten_phong_nd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phòng 1"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/tv_diachi_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sư Vạn Hạnh, Quận 10,Tp.HCM"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_ten_phong_nd"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_hopdong_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hợp đồng: #0001 01-01-2023 - (Chưa xác định)"
+            android:textSize="20dp"
+            android:layout_below="@+id/tv_diachi_nd"
+            android:layout_marginLeft="10dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_thongtin_nd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_thongtin_nd"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/hop">
+
+        <ImageButton
+            android:id="@+id/bt_bill_nd"
+            android:layout_width="80dp"
+            android:layout_height="66dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bill" />
+
+        <ImageButton
+            android:id="@+id/bt_HopDong_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/bt_bill_nd"
+            android:layout_toRightOf="@+id/bt_bill_nd"
+            android:background="@drawable/hopdong" />
+        <ImageButton
+            android:id="@+id/bt_taikhoan_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/bt_HopDong_nd"
+            android:layout_toRightOf="@id/bt_HopDong_nd"
+            android:background="@drawable/nguoi_thue" />
+        <TextView
+            android:id="@+id/tv_hoadon_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_bill_nd"
+            android:text="Hóa đơn"
+            android:textSize="20dp"
+            android:layout_marginLeft="25dp"
+            />
+        <TextView
+            android:id="@+id/tv_hd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_bill_nd"
+            android:text="Hợp đồng"
+            android:textSize="20dp"
+            android:layout_marginLeft="55dp"
+            android:layout_toEndOf="@+id/tv_hoadon_nd"
+            android:layout_toRightOf="@+id/tv_hoadon_nd"
+            />
+        <TextView
+            android:id="@+id/tv_tk_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_bill_nd"
+            android:text="Tài khoản"
+            android:textSize="20dp"
+            android:layout_marginLeft="55dp"
+            android:layout_toEndOf="@+id/tv_hd"
+            android:layout_toRightOf="@+id/tv_hd"
+            />
+        <ImageButton
+            android:id="@+id/bt_su_co_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/su_co"
+            android:layout_marginTop="32dp"
+            android:layout_below="@+id/tv_hd"
+            android:layout_centerInParent="true"
+            />
+        <TextView
+            android:id="@+id/tv_su_co_nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_su_co_nd"
+            android:text="Sự cố"
+            android:textSize="20dp"
+            android:layout_marginLeft="75dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/message"
+        app:backgroundTint="@color/black" />
+
+
+
+
+
+</RelativeLayout>

@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddHoaDonActivity">
-
+    tools:context=".ThongTinHoaDonActivity">
     <ImageButton
-        android:id="@+id/img_Back_hoadon"
+        android:id="@+id/img_Back_hoadon_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/arrow_back"
@@ -18,10 +17,10 @@
         android:layout_marginTop="22dp"
         />
     <TextView
-        android:id="@+id/tv_hd"
+        android:id="@+id/tv_hd_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hóa đơn"
+        android:text="Thông tin hóa đơn"
         android:textSize="25dp"
         android:textAlignment="center"
         android:layout_marginTop="10dp"
@@ -29,7 +28,7 @@
         android:gravity="center_horizontal" />
 
     <EditText
-        android:id="@+id/tv_ma_hoadon"
+        android:id="@+id/tv_ma_hoadon_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên hóa đơn"
@@ -37,72 +36,72 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
         android:textColor="@color/black"
-        android:layout_below="@+id/tv_hd"/>
+        android:layout_below="@+id/tv_hd_tt"/>
 
     <ImageView
-        android:id="@+id/img_home_hd"
+        android:id="@+id/img_home_hd_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ma_hoadon"
+        android:layout_below="@+id/tv_ma_hoadon_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/img_phong" />
 
     <EditText
-        android:id="@+id/tv_TenPhong_HD"
+        android:id="@+id/tv_TenPhong_HD_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ma_hoadon"
+        android:layout_below="@+id/tv_ma_hoadon_tt"
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
-        android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/img_home_hd"
-        android:layout_toRightOf="@+id/img_home_hd"
+        android:layout_marginTop="9dp"
+        android:layout_toEndOf="@+id/img_home_hd_tt"
+        android:layout_toRightOf="@+id/img_home_hd_tt"
         android:hint="Tên phòng"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
     <ImageView
-        android:id="@+id/img_calender_hd"
+        android:id="@+id/img_calender_hd_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_home_hd"
+        android:layout_below="@+id/img_home_hd_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/calendar" />
 
     <EditText
-        android:id="@+id/tv_calender"
+        android:id="@+id/tv_calender_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_home_hd"
+        android:layout_below="@+id/img_home_hd_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/img_calender_hd"
-        android:layout_toRightOf="@+id/img_calender_hd"
+        android:layout_marginTop="11dp"
+        android:layout_toEndOf="@+id/img_calender_hd_tt"
+        android:layout_toRightOf="@+id/img_calender_hd_tt"
         android:hint="ngày tháng năm"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
     <ImageView
-        android:id="@+id/img_nguoi_thue"
+        android:id="@+id/img_nguoi_thue_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_calender_hd"
+        android:layout_below="@+id/img_calender_hd_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/nguoitao" />
 
     <EditText
-        android:id="@+id/tv_nguoi_thue"
+        android:id="@+id/tv_nguoi_thue_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/img_nguoi_thue"
-        android:layout_below="@+id/img_calender_hd"
-        android:layout_toRightOf="@+id/img_nguoi_thue"
+        android:layout_toEndOf="@+id/img_nguoi_thue_tt"
+        android:layout_below="@+id/img_calender_hd_tt"
+        android:layout_toRightOf="@+id/img_nguoi_thue_tt"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:hint="Người thuê"
@@ -110,99 +109,100 @@
         android:padding="6dp"
         />
     <ImageView
-        android:id="@+id/img_gp_hd"
+        android:id="@+id/img_gp_hd_tt"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/img_nguoi_thue"
+        android:layout_below="@+id/img_nguoi_thue_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/tien_coc" />
 
     <EditText
-        android:id="@+id/edt_gia_thue_hoadon"
+        android:id="@+id/edt_gia_thue_hoadon_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_nguoi_thue"
+        android:layout_below="@+id/img_nguoi_thue_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/img_gp_hd"
-        android:layout_toRightOf="@+id/img_gp_hd"
+        android:layout_toEndOf="@+id/img_gp_hd_tt"
+        android:layout_toRightOf="@+id/img_gp_hd_tt"
         android:hint="Tiền phòng"
         android:padding="6dp"
         android:textSize="20dp" />
     <ImageView
-        android:id="@+id/img_gp_hd2"
+        android:id="@+id/img_gp_hd2_tt"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/img_gp_hd"
+        android:layout_below="@+id/img_gp_hd_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/tien_coc" />
 
     <EditText
-        android:id="@+id/edt_gia_dien"
+        android:id="@+id/edt_gia_dien_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_hd"
+        android:layout_below="@+id/img_gp_hd_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/img_gp_hd2"
-        android:layout_toRightOf="@+id/img_gp_hd2"
+        android:layout_toEndOf="@+id/img_gp_hd2_tt"
+        android:layout_toRightOf="@+id/img_gp_hd2_tt"
         android:hint="Tiền điện (4000đ /kwh)"
         android:padding="6dp"
         android:textSize="20dp" />
     <ImageView
-        android:id="@+id/img_gp_hd3"
+        android:id="@+id/img_gp_hd3_tt"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/img_gp_hd2"
+        android:layout_below="@+id/img_gp_hd2_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/tien_coc" />
 
     <EditText
-        android:id="@+id/edt_gia_nuoc"
+        android:id="@+id/edt_gia_nuoc_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_hd2"
+        android:layout_below="@+id/img_gp_hd2_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/img_gp_hd3"
-        android:layout_toRightOf="@+id/img_gp_hd3"
+        android:layout_toEndOf="@+id/img_gp_hd3_tt"
+        android:layout_toRightOf="@+id/img_gp_hd3_tt"
         android:hint="Tiền nước"
         android:padding="6dp"
         android:textSize="20dp" />
 
     <ImageView
-        android:id="@+id/img_gp_hd4"
+        android:id="@+id/img_gp_hd4_tt"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/img_gp_hd3"
+        android:layout_below="@+id/img_gp_hd3_tt"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/tien_coc" />
 
     <EditText
-        android:id="@+id/edt_khac"
+        android:id="@+id/edt_khac_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_hd3"
+        android:layout_below="@+id/img_gp_hd3_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
-        android:layout_toEndOf="@+id/img_gp_hd4"
-        android:layout_toRightOf="@+id/img_gp_hd4"
+        android:layout_toEndOf="@+id/img_gp_hd4_tt"
+        android:layout_toRightOf="@+id/img_gp_hd4_tt"
         android:hint="khác ( tiền cọc thiếu, tiền sửa chữa,...)"
         android:padding="6dp"
         android:textSize="20dp" />
+
     <TextView
-        android:id="@+id/tong_tien"
+        android:id="@+id/tong_tien_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_hd4"
+        android:layout_below="@+id/img_gp_hd4_tt"
         android:text="Tổng :"
         android:textSize="20dp"
         android:layout_marginTop="15dp"
@@ -212,22 +212,24 @@
         android:id="@+id/edt_tong_tien_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_hd4"
+        android:layout_below="@+id/img_gp_hd4_tt"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/tong_tien"
-        android:layout_toRightOf="@+id/tong_tien"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/tong_tien_tt"
+        android:layout_toRightOf="@+id/tong_tien_tt"
         android:hint="Tổng tiền"
         android:padding="6dp"
         android:textSize="20dp" />
 
 
+
+
     <TextView
-        android:id="@+id/ghichu_hoadon"
+        android:id="@+id/ghichu_hoadon_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tong_tien"
+        android:layout_below="@+id/tong_tien_tt"
         android:text="Ghi chú:"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -235,13 +237,13 @@
         android:layout_marginLeft="10dp"
         />
     <EditText
-        android:id="@+id/edt_ghichu"
+        android:id="@+id/edt_ghichu_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/hop"
         android:textSize="20dp"
         android:hint="   Nhập ghi chú"
-        android:layout_below="@+id/ghichu_hoadon"
+        android:layout_below="@+id/ghichu_hoadon_tt"
         android:textColor="#BBBBBB"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -252,19 +254,34 @@
         android:gravity="left|top"
         />
     <Button
-        android:id="@+id/bt_Tao_Hoa_don"
-        android:layout_width="match_parent"
+        android:id="@+id/bt_da_thanh_toan"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="32dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/hop"
-        android:text="TẠO HÓA ĐƠN"
+        android:text="ĐÃ THANH TOÁN"
         android:layout_marginBottom="20dp"
         android:textSize="20dp"
         app:backgroundTint="@color/teal_200"
         android:layout_alignParentBottom="true"
         />
 
-
+<!--    Nút này chưa bt làm j ae tự đổi id đổi text dùm-->
+    <Button
+        android:id="@+id/bt_huy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/hop"
+        android:text="HỦY"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        app:backgroundTint="@color/teal_200"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/bt_da_thanh_toan"
+        android:layout_toRightOf="@+id/bt_da_thanh_toan" />
 </RelativeLayout>
