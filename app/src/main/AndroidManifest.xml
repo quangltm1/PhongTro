@@ -12,6 +12,15 @@
         android:theme="@style/Theme.DemoAppNhaTro"
         tools:targetApi="31">
         <activity
+            android:name=".ThongTinHoaDonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThongTinHopDongActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RoleNguoiDungActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddPhongActivity"
             android:exported="false" />
         <activity
@@ -48,10 +57,8 @@
             android:name=".BillActivity"
             android:exported="false" />
         <activity
-        android:name=".ForgotPassActivity"
-            android:label="Forgot Password">
-        </activity>
-
+            android:name=".ForgotPassActivity"
+            android:label="Forgot Password" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
