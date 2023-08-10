@@ -14,11 +14,6 @@
         <activity
             android:name=".ThongTinNguoiThueActivity"
             android:exported="false" />
-
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/tieude" />
-
         <activity
             android:name=".DaiDienChoThueActivity"
             android:exported="false" />
