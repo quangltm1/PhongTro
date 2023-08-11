@@ -84,20 +84,22 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PHONGID_THONGBAO_SUCO = "phongid";
     public static final String COLUMN_NGUOIDUNGID_THONGBAO_SUCO = "nguoidungid";
 
-    // Table ThongBao
-    public static final String TABLE_THONGBAO = "ThongBao";
-    public static final String COLUMN_THONGBAOID = "thongbao_id";
-    public static final String COLUMN_THONGBAONOIDUNG = "thongbao_noidung";
-    public static final String COLUMN_THONGBAONGAY = "thongbao_ngay";
-    public static final String COLUMN_NGUOIDUNGID_THONGBAO = "nguoidungid";
 
     // Table HopDong
     public static final String TABLE_HOPDONG = "HopDong";
     public static final String COLUMN_HOPDONGID = "hopdong_id";
     public static final String COLUMN_HOPDONGTEN = "hopdong_ten";
+    public static final String COLUMN_HOPDONGTIENDIEN = "hopdong_tiendien";
+    public static final String COLUMN_HOPDONGTIENNUOC = "hopdong_tiennuoc";
+    public static final String COLUMN_HOPDONGTIENPHONG = "hopdong_tienphong";
+    public static final String COLUMN_HOPDONGTIENCOC = "hopdong_tiencoc";
     public static final String COLUMN_HOPDONGNOIDUNG = "hopdong_noidung";
     public static final String COLUMN_HOPDONGNGAYBATDAU = "hopdong_ngaybatdau";
     public static final String COLUMN_HOPDONGNGAYKETTHUC = "hopdong_ngayketthuc";
+    public static final String COLUMN_HOPDONGTENNGUOITHUE = "hopdong_tennguoithue";
+    public static final String COLUMN_HOPDONGCCCDNGUOITHUE = "hopdong_cccdnguoithue";
+    public static final String COLUMN_HOPDONGTENCHUTRO = "hopdong_tenchutro";
+    public static final String COLUMN_HOPDONGCCCDCHUTRO = "hopdong_cccdchutro";
     public static final String COLUMN_TRANGTHAIHOPDONG = "hopdong_trangthai";
     public static final String COLUMN_PHONGID_HOPDONG = "phongid";
     public static final String COLUMN_NGUOIDUNGID_HOPDONG = "nguoidungid";
@@ -149,16 +151,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 ")";
         db.execSQL(createPhongTroTable);
 
-        /*String createToaNhaTable = "CREATE TABLE " + TABLE_TOANHA + "(" +
-                COLUMN_TOANHAID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_TENTOANHA + " TEXT, " +
-                COLUMN_MOTATOANHA + " TEXT, " +
-                COLUMN_DIACHITOANHA + " TEXT, " +
-                COLUMN_TOANHA_PHONGID + " INTEGER" +
-                ")";
-        db.execSQL(createToaNhaTable);*/
-
-
         String createTaiKhoanTable = "CREATE TABLE " + TABLE_TAIKHOAN + "(" +
                 COLUMN_NGUOIDUNGID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_TENNGUOIDUNG + " TEXT, " +
@@ -193,21 +185,29 @@ public class DBHelper extends SQLiteOpenHelper {
                 ")";
         db.execSQL(createThongBaoSuCoTable);
 
-        String createThongBaoTable = "CREATE TABLE " + TABLE_THONGBAO + "(" +
+        /*String createThongBaoTable = "CREATE TABLE " + TABLE_THONGBAO + "(" +
                 COLUMN_THONGBAOID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_THONGBAONOIDUNG + " TEXT, " +
                 COLUMN_THONGBAONGAY + " TEXT, " +
                 COLUMN_NGUOIDUNGID_THONGBAO + " INTEGER, " +
                 "FOREIGN KEY(" + COLUMN_NGUOIDUNGID_THONGBAO + ") REFERENCES " + TABLE_TAIKHOAN + "(" + COLUMN_NGUOIDUNGID + ")" +
                 ")";
-        db.execSQL(createThongBaoTable);
+        db.execSQL(createThongBaoTable);*/
 
         String createHopDongTable = "CREATE TABLE " + TABLE_HOPDONG + "(" +
                 COLUMN_HOPDONGID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_HOPDONGTEN + " TEXT, " +
+                COLUMN_HOPDONGTIENDIEN + " INTEGER, " +
+                COLUMN_HOPDONGTIENNUOC + " INTEGER, " +
+                COLUMN_HOPDONGTIENPHONG + " INTEGER, " +
+                COLUMN_HOPDONGTIENCOC + " INTEGER, " +
                 COLUMN_HOPDONGNOIDUNG + " TEXT, " +
                 COLUMN_HOPDONGNGAYBATDAU + " TEXT, " +
                 COLUMN_HOPDONGNGAYKETTHUC + " TEXT, " +
+                COLUMN_HOPDONGTENNGUOITHUE + " TEXT, " +
+                COLUMN_HOPDONGTENCHUTRO + " TEXT, " +
+                COLUMN_HOPDONGCCCDNGUOITHUE + " INTEGER, " +
+                COLUMN_HOPDONGCCCDCHUTRO + " INTEGER, " +
                 COLUMN_TRANGTHAIHOPDONG + " INTEGER, " +
                 COLUMN_PHONGID_HOPDONG + " INTEGER, " +
                 COLUMN_NGUOIDUNGID_HOPDONG + " INTEGER, " +
@@ -229,7 +229,7 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_TAIKHOAN);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUCO);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_THONGBAO_SUCO);
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_THONGBAO);
+            /*db.execSQL("DROP TABLE IF EXISTS " + TABLE_THONGBAO);*/
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_HOPDONG);
             onCreate(db);
 
@@ -453,4 +453,112 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public ArrayList<HopDong> getAllHopDong() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<HopDong> hopDongList = new ArrayList<>();
+
+        Cursor cursor = db.query(
+                TABLE_HOPDONG,
+                new String[]{COLUMN_HOPDONGID,
+                        COLUMN_HOPDONGTEN,
+                        COLUMN_HOPDONGNGAYBATDAU,
+                        COLUMN_HOPDONGNGAYKETTHUC,
+                        COLUMN_HOPDONGTIENPHONG,
+                        COLUMN_HOPDONGTIENDIEN,
+                        COLUMN_HOPDONGTIENNUOC,
+                        COLUMN_HOPDONGTIENCOC,
+                        COLUMN_HOPDONGTENNGUOITHUE,
+                        COLUMN_HOPDONGCCCDNGUOITHUE,
+                        COLUMN_HOPDONGTENCHUTRO,
+                        COLUMN_HOPDONGCCCDCHUTRO,
+                        COLUMN_HOPDONGNOIDUNG,
+                        COLUMN_NGUOIDUNGID_HOPDONG},
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                long id = cursor.getLong(cursor.getColumnIndex(COLUMN_HOPDONGID));
+                String tenphong = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGTEN));
+                String ngayBatDau = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGNGAYBATDAU));
+                String ngayKetThuc = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGNGAYKETTHUC));
+                int tienPhong = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGTIENPHONG));
+                int tienDien = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGTIENDIEN));
+                int tienNuoc = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGTIENNUOC));
+                int tienCoc = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGTIENCOC));
+                String tennguoithue = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGTENNGUOITHUE));
+                int cccdnguoithue = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGCCCDNGUOITHUE));
+                String tenchutro = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGTENCHUTRO));
+                int cccdchutrongoi = cursor.getInt(cursor.getColumnIndex(COLUMN_HOPDONGCCCDCHUTRO));
+                String noidung = cursor.getString(cursor.getColumnIndex(COLUMN_HOPDONGNOIDUNG));
+                long nguoiDungId = cursor.getLong(cursor.getColumnIndex(COLUMN_NGUOIDUNGID_HOPDONG));
+
+                HopDong hopDong = new HopDong(id,tenphong, ngayBatDau, ngayKetThuc, tienPhong, tienDien, tienNuoc, tienCoc, cccdnguoithue, cccdchutrongoi, tennguoithue, tenchutro,noidung, nguoiDungId);
+                hopDongList.add(hopDong);
+            } while (cursor.moveToNext());
+
+            cursor.close();
+        }
+
+        db.close();
+        return hopDongList;
+    }
+
+    public ArrayList<TaiKhoan> getTaiKhoan(long nguoiThueId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<TaiKhoan> taiKhoanList = new ArrayList<>();
+
+        Cursor cursor = db.query(
+                TABLE_TAIKHOAN,
+                new String[]{COLUMN_NGUOIDUNGID,
+                        COLUMN_TENDANGNHAP,
+                        COLUMN_MATKHAU,
+                        COLUMN_NGUOIDUNGID},
+                COLUMN_NGUOIDUNGID + "=?",
+                new String[]{String.valueOf(nguoiThueId)},
+                null,
+                null,
+                null,
+                null
+        );
+
+        if (cursor != null && cursor.moveToFirst()) {
+            long id = cursor.getLong(cursor.getColumnIndex(COLUMN_NGUOIDUNGID));
+            String username = cursor.getString(cursor.getColumnIndex(COLUMN_TENDANGNHAP));
+            String password = cursor.getString(cursor.getColumnIndex(COLUMN_MATKHAU));
+            long nguoiDungId = cursor.getLong(cursor.getColumnIndex(COLUMN_NGUOIDUNGID));
+
+            TaiKhoan taiKhoan = new TaiKhoan(id, username, password, nguoiDungId);
+            taiKhoanList.add(taiKhoan);
+            cursor.close();
+        }while (cursor.moveToNext());
+
+        db.close();
+        return taiKhoanList;
+    }
+
+    public void addHopDong(HopDong hopDong) {
+        ContentValues values = new ContentValues();
+
+        values.put(COLUMN_HOPDONGTEN, hopDong.getHopDongTen());
+        values.put(COLUMN_HOPDONGNGAYBATDAU, hopDong.getHopDongNgayBatDau());
+        values.put(COLUMN_HOPDONGNGAYKETTHUC, hopDong.getHopDongNgayKetThuc());
+        values.put(COLUMN_HOPDONGTIENPHONG, hopDong.getTienPhong());
+        values.put(COLUMN_HOPDONGTIENDIEN, hopDong.getTienDien());
+        values.put(COLUMN_HOPDONGTIENNUOC, hopDong.getTienNuoc());
+        values.put(COLUMN_HOPDONGTIENCOC, hopDong.getTienCoc());
+        values.put(COLUMN_HOPDONGTENNGUOITHUE, hopDong.getTennguoithue());
+        values.put(COLUMN_HOPDONGCCCDNGUOITHUE, hopDong.getCccdnguoithue());
+        values.put(COLUMN_HOPDONGTENCHUTRO, hopDong.getTenchutro());
+        values.put(COLUMN_HOPDONGCCCDCHUTRO, hopDong.getCccdchutro());
+        values.put(COLUMN_HOPDONGNOIDUNG, hopDong.getHopDongNoiDung());
+        values.put(COLUMN_NGUOIDUNGID_HOPDONG, hopDong.getNguoiDungId());
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(TABLE_HOPDONG, null, values);
+        db.close();
+    }
 }

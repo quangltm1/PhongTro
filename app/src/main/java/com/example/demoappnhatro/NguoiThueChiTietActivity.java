@@ -49,8 +49,8 @@ public class NguoiThueChiTietActivity extends AppCompatActivity {
                 // Lấy tên phòng từ cơ sở dữ liệu và hiển thị lên tvPhongDangThue
                 DBHelper dbHelper = new DBHelper(NguoiThueChiTietActivity.this);
                 String tenPhong = dbHelper.getTenPhongTroById(taiKhoan.getPhongTroId());
-                dbHelper.close();
                 tvPhongDangThue.setText("Phòng đang thuê: " + tenPhong);
+                dbHelper.close();
             }
         }
 

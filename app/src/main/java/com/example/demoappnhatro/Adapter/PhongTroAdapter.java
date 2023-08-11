@@ -16,10 +16,12 @@ import java.util.ArrayList;
 
 public class PhongTroAdapter extends ArrayAdapter<PhongTro> {
     private Context mContext;
+    private ArrayList<PhongTro> mListPhongTro;
 
     public PhongTroAdapter(Context context, ArrayList<PhongTro> mListPhongTro) {
         super(context, 0, mListPhongTro);
         mContext = context;
+        this.mListPhongTro = mListPhongTro;
     }
 
     @NonNull

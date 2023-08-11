@@ -1,15 +1,12 @@
 package com.example.demoappnhatro;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.demoappnhatro.Adapter.BillAdapter;
 
 public class BillActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
+    ListView lvBill;
 
 
     @Override
@@ -17,10 +14,6 @@ public class BillActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danhsachbill);
 
-        recyclerView = findViewById(R.id.rcv_bill);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new BillAdapter());
 
     }
 }

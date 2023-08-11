@@ -98,7 +98,7 @@
             android:id="@+id/bt_bill"
             android:layout_width="80dp"
             android:layout_height="66dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="55dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/bill" />
 
@@ -106,22 +106,24 @@
             android:id="@+id/bt_HopDong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/bt_bill"
-            android:layout_toRightOf="@+id/bt_bill"
+            android:layout_below="@+id/tv_tiencoc"
+            android:layout_marginStart="154dp"
+            android:layout_marginLeft="154dp"
+            android:layout_marginTop="51dp"
+            android:layout_toEndOf="@+id/bt_nguoi_thue"
+            android:layout_toRightOf="@+id/bt_nguoi_thue"
             android:background="@drawable/hopdong" />
 
         <ImageButton
             android:id="@+id/bt_TienCoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="75dp"
+            android:layout_marginStart="141dp"
+            android:layout_marginLeft="141dp"
             android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/bt_HopDong"
-            android:layout_toRightOf="@id/bt_HopDong"
-            android:background="@drawable/tien_coc" />
+            android:layout_toEndOf="@+id/bt_bill"
+            android:layout_toRightOf="@+id/bt_bill"
+            android:background="@drawable/su_co" />
 
         <TextView
             android:id="@+id/tv_hoadon"
@@ -130,90 +132,54 @@
             android:layout_below="@+id/bt_bill"
             android:text="Hóa đơn"
             android:textSize="20dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="55dp"
             />
+
         <TextView
             android:id="@+id/tv_hopdong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/bt_bill"
+            android:layout_alignBottom="@+id/bt_HopDong"
+            android:layout_marginStart="128dp"
+            android:layout_marginLeft="128dp"
+            android:layout_marginBottom="-27dp"
+            android:layout_toEndOf="@+id/tv_nguoithuephong"
+            android:layout_toRightOf="@+id/tv_nguoithuephong"
             android:text="Hợp đồng"
-            android:textSize="20dp"
-            android:layout_marginLeft="55dp"
-            android:layout_toEndOf="@+id/tv_hoadon"
-            android:layout_toRightOf="@+id/tv_hoadon"
-            />
+            android:textSize="20dp" />
+
         <TextView
             android:id="@+id/tv_tiencoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bt_bill"
-            android:text="Tiền cọc"
-            android:textSize="20dp"
-            android:layout_marginLeft="55dp"
-            android:layout_toEndOf="@+id/tv_hopdong"
-            android:layout_toRightOf="@+id/tv_hopdong"
-            />
+            android:layout_marginStart="151dp"
+            android:layout_marginLeft="151dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@+id/tv_hoadon"
+            android:layout_toRightOf="@+id/tv_hoadon"
+            android:text="Sự cố"
+            android:textSize="20dp" />
+
         <ImageButton
             android:id="@+id/bt_nguoi_thue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/nguoi_thue"
-            android:layout_marginTop="48dp"
-            android:layout_marginLeft="25dp"
             android:layout_below="@+id/tv_hoadon"
-            />
-        <ImageButton
-            android:id="@+id/bt_su_co"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/su_co"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="48dp"
-            android:layout_marginLeft="80dp"
-            android:layout_below="@+id/tv_hoadon"
-            android:layout_toEndOf="@+id/bt_nguoi_thue"
-            android:layout_toRightOf="@+id/bt_nguoi_thue" />
-        <ImageButton
-            android:id="@+id/bt_so_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/so_no"
-            android:layout_marginTop="48dp"
-            android:layout_marginLeft="70dp"
-            android:layout_below="@+id/tv_hoadon"
-            android:layout_toEndOf="@+id/bt_su_co"
-            android:layout_toRightOf="@+id/bt_su_co" />
+            android:background="@drawable/nguoi_thue" />
+
         <TextView
             android:id="@+id/tv_nguoithuephong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bt_nguoi_thue"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="0dp"
             android:text="Người thuê"
-            android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            />
-        <TextView
-            android:id="@+id/tv_su_co"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bt_nguoi_thue"
-            android:text="Sự cố"
-            android:textSize="20dp"
-            android:layout_marginLeft="75dp"
-            android:layout_toEndOf="@+id/tv_hoadon"
-            android:layout_toRightOf="@+id/tv_hoadon"
-            />
-        <TextView
-            android:id="@+id/tv_so_no"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bt_nguoi_thue"
-            android:text="Sổ nợ"
-            android:textSize="20dp"
-            android:layout_marginLeft="70dp"
-            android:layout_toEndOf="@+id/tv_hopdong"
-            android:layout_toRightOf="@+id/tv_hopdong"
-            />
+            android:textSize="20dp" />
 
     </RelativeLayout>
 

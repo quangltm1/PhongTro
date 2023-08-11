@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 import androidx.annotation.Nullable;
@@ -21,7 +23,7 @@ import com.example.demoappnhatro.Database.TaiKhoan;
 
 public class PhongChiTietActivity extends AppCompatActivity {
     TextView tvTenPhong, tvTrangThaiPhong, tvNguoiThue;
-    Button btnTaoHoaDon, btnTaoHopDong, btnTaoTaiKhoan, btnXoaphong, btnChoThue;
+    Button  btnTaoHopDong, btnTaoTaiKhoan, btnXoaphong;
     Database database;
     DBHelper dbHelper;
     private PhongTro phongTro;
@@ -32,25 +34,9 @@ public class PhongChiTietActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        updateNguoiThue();
+        tvNguoiThue.setText("Người thuê : " + phongTro.getNguoiThueId());
     }
 
-    private void updateNguoiThue() {
-        if (phongTro != null) {
-            // Lấy thông tin người thuê từ cơ sở dữ liệu bằng ID người thuê (nguoiThueId của phòng)
-            long nguoiThueId = phongTro.getNguoiThueId();
-            if (nguoiThueId > 0) {
-                TaiKhoan nguoiThue = database.getTaiKhoanById(nguoiThueId);
-                if (nguoiThue != null) {
-                    // Hiển thị thông tin người thuê lên TextView
-                    tvNguoiThue.setText("Người thuê: " + nguoiThue.getTenNguoiDung());
-                } else {
-                    // Nếu không tìm thấy người thuê, hiển thị thông báo "Chưa có người thuê"
-                    tvNguoiThue.setText("Chưa có người thuê");
-                }
-            }
-        }
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,11 +46,9 @@ public class PhongChiTietActivity extends AppCompatActivity {
         tvTenPhong = findViewById(R.id.tv_tenphong);
         tvTrangThaiPhong = findViewById(R.id.tv_trangthaiphong);
         tvNguoiThue = findViewById(R.id.tv_nguoithuephong);
-        btnTaoHoaDon = findViewById(R.id.btn_taohoadonphong);
         btnTaoHopDong = findViewById(R.id.btn_taohopdongphong);
         btnTaoTaiKhoan = findViewById(R.id.btn_taotaikhoanphong);
         btnXoaphong = findViewById(R.id.btn_xoaphong);
-        btnChoThue = findViewById(R.id.btn_chothue);
 
         database = new Database(this);
         dbHelper = new DBHelper(this);
@@ -74,9 +58,7 @@ public class PhongChiTietActivity extends AppCompatActivity {
             // Hiển thị thông tin phòng lên các TextView tương ứng
             tvTenPhong.setText("Phòng : " + phongTro.getTenPhong());
             tvTrangThaiPhong.setText(phongTro.getTrangThaiPhong() == 0 ? "Trạng thái: Chưa cho thuê" : "Trạng thái: Đã cho thuê");
-
-            // Lấy thông tin người thuê từ cơ sở dữ liệu và hiển thị lên TextView
-            updateNguoiThue();
+            tvNguoiThue.setText("Người thuê: " + phongTro.getNguoiThueId());
         } else {
             // Phòng không tồn tại trong cơ sở dữ liệu
             Toast.makeText(this, "Phòng không tồn tại", Toast.LENGTH_SHORT).show();
@@ -108,8 +90,8 @@ public class PhongChiTietActivity extends AppCompatActivity {
 
                     // Thông báo tạo tài khoản thành công
                     Toast.makeText(PhongChiTietActivity.this, "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
-                    // Cập nhật thông tin người thuê lên giao diện
-                    updateNguoiThue();
+                    tvNguoiThue.setText("Người thuê : " + phongTro.getNguoiThueId());
+
                 } else {
                     // Thông báo tạo tài khoản thất bại
                     Toast.makeText(PhongChiTietActivity.this, "Tạo tài khoản thất bại", Toast.LENGTH_SHORT).show();
@@ -117,36 +99,20 @@ public class PhongChiTietActivity extends AppCompatActivity {
             }
         });
 
-        btnChoThue.setOnClickListener(new View.OnClickListener() {
+        btnTaoHopDong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChoThue) {
-                    // Thay đổi trạng thái phòng thành đã cho thuê (1)
-                    phongTro.setTrangThaiPhong(1);
-                    // Cập nhật thông tin phòng trong cơ sở dữ liệu
-                    database.capNhatThongTinPhongTro(phongTro);
-                    // Hiển thị trạng thái phòng đã cho thuê lên TextView
-                    tvTrangThaiPhong.setText("Trạng thái: Đã cho thuê");
-                    // Hiển thị thông báo thành công
-                    Toast.makeText(PhongChiTietActivity.this, "Phòng đã được cho thuê", Toast.LENGTH_SHORT).show();
-                    // Thay đổi text của button thành "Huy Cho Thue"
-                    btnChoThue.setText("Huy Cho Thue");
-                    updateNguoiThue();
+                // Kiểm tra xem phòng đã có người thuê hay chưa
+                long nguoiThueId = phongTro.getNguoiThueId();
+                if (nguoiThueId == 0) {
+                    // Nếu chua có người thuê, tạo hợp đồng
+                    Intent intent = new Intent(PhongChiTietActivity.this, AddHopDongActivity.class);
+                    intent.putExtra("phongtro", phongTro);
+                    startActivity(intent);
                 } else {
-                    // Thay đổi trạng thái phòng thành chưa cho thuê (0)
-                    phongTro.setTrangThaiPhong(0);
-                    // Cập nhật thông tin phòng trong cơ sở dữ liệu
-                    database.capNhatThongTinPhongTro(phongTro);
-                    // Hiển thị trạng thái phòng chưa cho thuê lên TextView
-                    tvTrangThaiPhong.setText("Trạng thái: Chưa cho thuê");
-                    // Hiển thị thông báo thành công
-                    Toast.makeText(PhongChiTietActivity.this, "Phòng chưa được cho thuê", Toast.LENGTH_SHORT).show();
-                    // Thay đổi text của button thành "Cho Thue"
-                    btnChoThue.setText("Cho Thue");
-                    updateNguoiThue();
+                    // Nếu đã có người thuê, hiển thị thông báo
+                    Toast.makeText(PhongChiTietActivity.this, "Phòng đã có người thuê", Toast.LENGTH_SHORT).show();
                 }
-                // Đảo ngược trạng thái biến isChoThue
-                isChoThue = !isChoThue;
             }
         });
 

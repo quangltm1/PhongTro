@@ -51,11 +51,11 @@ public class LoginActivity extends AppCompatActivity {
         if (taiKhoan != null && taiKhoan.getMatKhau() != null && taiKhoan.getMatKhau().equals(password)) {
             int role = taiKhoan.getRole();
             if (role == 0) {
-                Toast.makeText(this, "Đăng nhập thành công (vai trò: admin)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Đăng nhập thành công "+taiKhoan.getTenNguoiDung().toString(), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             } else {
-                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+                Toast.makeText(this, "Chào " , Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, RoleNguoiDungActivity.class));
             }
             finish();
         } else if (email.isEmpty() || password.isEmpty()){

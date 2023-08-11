@@ -43,7 +43,7 @@ public class NguoiThueAdapter extends ArrayAdapter<TaiKhoan> {
 
 
         // Hiển thị thông tin người thuê lên giao diện
-        holder.tvNguoiThueId.setText("ID: " + nguoiThue.getNguoiDungId());
+        holder.tvNguoiThueId.setText("Người thuê: " + nguoiThue.getNguoiDungId());
         holder.tvTenTaiKhoan.setText("Tên tài khoản: " + nguoiThue.getTenDangNhap());
         holder.tvTenPhong.setText("Phòng: " + nguoiThue.getPhongTroId());
 

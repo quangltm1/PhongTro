@@ -1,5 +1,21 @@
 package com.example.demoappnhatro.Database;
 
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGCCCDCHUTRO;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGCCCDNGUOITHUE;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGNGAYBATDAU;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGNGAYKETTHUC;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGNOIDUNG;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTEN;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTENCHUTRO;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTENNGUOITHUE;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTIENCOC;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTIENDIEN;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTIENNUOC;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_HOPDONGTIENPHONG;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_NGUOIDUNGID_HOPDONG;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_PHONGID_HOPDONG;
+import static com.example.demoappnhatro.Database.DBHelper.COLUMN_TRANGTHAIHOPDONG;
+import static com.example.demoappnhatro.Database.DBHelper.TABLE_HOPDONG;
 import static com.example.demoappnhatro.Database.DBHelper.TABLE_PHONGTRO;
 
 import android.annotation.SuppressLint;
@@ -25,9 +41,29 @@ public class Database {
         return null;
     }
 
+    public static boolean deleteNguoiThue(SQLiteDatabase db, long nguoiDungId) {
+        return db.delete(DBHelper.TABLE_TAIKHOAN, DBHelper.COLUMN_NGUOIDUNGID + "=" + nguoiDungId, null) > 0;
+    }
+
+    public static boolean updateRoomStatus(SQLiteDatabase db, long phongId, int trangThai) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelper.COLUMN_TRANGTHAI_PHONG, trangThai);
+        return db.update(DBHelper.TABLE_PHONGTRO, contentValues, DBHelper.COLUMN_PHONGID_PHONG + "=" + phongId, null) > 0;
+    }
+
+    public static boolean updateHopDongStatus(SQLiteDatabase db, String hopDongTen, int trangThai) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelper.COLUMN_TRANGTHAIHOPDONG, trangThai);
+        return db.update(DBHelper.TABLE_HOPDONG, contentValues, DBHelper.COLUMN_HOPDONGTEN + "=" + hopDongTen, null) > 0;
+    }
+
 
     public Cursor layTatCaDuLieuPhongTro(){
-        String cot[] = {DBHelper.COLUMN_PHONGID, DBHelper.COLUMN_TENPHONG, DBHelper.COLUMN_GIATHUE_PHONG, DBHelper.COLUMN_TRANGTHAI_PHONG, DBHelper.COLUMN_NGUOITHUEID};
+        String cot[] = {DBHelper.COLUMN_PHONGID,
+                DBHelper.COLUMN_TENPHONG,
+                DBHelper.COLUMN_GIATHUE_PHONG,
+                DBHelper.COLUMN_TRANGTHAI_PHONG,
+                DBHelper.COLUMN_NGUOITHUEID};
         Cursor cursor = null;
         cursor = database.query(TABLE_PHONGTRO, cot,null,null,null,null,null);
         return cursor;
@@ -48,9 +84,13 @@ public class Database {
         return cursor;
     }
     public Cursor layTatCaDuLieuHopDong(){
-        String cot[] = {DBHelper.COLUMN_HOPDONGID, DBHelper.COLUMN_HOPDONGNGAYBATDAU, DBHelper.COLUMN_HOPDONGNGAYKETTHUC, DBHelper.COLUMN_TRANGTHAIHOPDONG, DBHelper.COLUMN_PHONGID_HOPDONG};
+        String cot[] = {DBHelper.COLUMN_HOPDONGID,
+                COLUMN_HOPDONGNGAYBATDAU,
+                COLUMN_HOPDONGNGAYKETTHUC,
+                COLUMN_TRANGTHAIHOPDONG,
+                COLUMN_HOPDONGNOIDUNG};
         Cursor cursor = null;
-        cursor = database.query(DBHelper.TABLE_HOPDONG, cot,null,null,null,null,null);
+        cursor = database.query(TABLE_HOPDONG, cot,null,null,null,null,null);
         return cursor;
     }
 
@@ -71,6 +111,7 @@ public class Database {
         values.put(DBHelper.COLUMN_TIENCOC_PHONG, phongTro.getTienCoc());
         values.put(DBHelper.COLUMN_MOTAPHONG, phongTro.getMoTaPhong());
         database.insert(TABLE_PHONGTRO, null, values);
+
     }
 
     // Phương thức xóa phòng theo ID
@@ -216,6 +257,24 @@ public class Database {
                 new String[]{String.valueOf(phongId)});
 
         db.close();
+    }
+
+    public void addHopDong(HopDong hopDong) {
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_HOPDONGTEN, hopDong.getHopDongTen());
+        values.put(COLUMN_HOPDONGNGAYBATDAU, hopDong.getHopDongNgayBatDau());
+        values.put(COLUMN_HOPDONGNGAYKETTHUC, hopDong.getHopDongNgayKetThuc());
+        values.put(COLUMN_HOPDONGTIENPHONG, hopDong.getTienPhong());
+        values.put(COLUMN_HOPDONGTIENDIEN, hopDong.getTienDien());
+        values.put(COLUMN_HOPDONGTIENNUOC, hopDong.getTienNuoc());
+        values.put(COLUMN_HOPDONGTIENCOC, hopDong.getTienCoc());
+        values.put(COLUMN_HOPDONGTENNGUOITHUE, hopDong.getTennguoithue());
+        values.put(COLUMN_HOPDONGCCCDNGUOITHUE, hopDong.getCccdnguoithue());
+        values.put(COLUMN_HOPDONGTENCHUTRO, hopDong.getTenchutro());
+        values.put(COLUMN_HOPDONGCCCDCHUTRO, hopDong.getCccdchutro());
+        values.put(COLUMN_HOPDONGNOIDUNG, hopDong.getHopDongNoiDung());
+        values.put(COLUMN_TRANGTHAIHOPDONG, 0);
+        database.insert(TABLE_HOPDONG, null, values);
     }
 
 

@@ -1,33 +1,24 @@
 package com.example.demoappnhatro.Adapter;
 
+import android.content.Context;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class BillAdapter extends RecyclerView.Adapter {
-    //viết code lấy tên phòng và tổng tiền từ database hiện lên màn hình
-    @NonNull
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+import com.example.demoappnhatro.Database.HoaDon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BillAdapter extends ArrayAdapter<HoaDon> {
+    private Context mContext;
+    private ArrayList<HoaDon> mListBill;
+
+    public BillAdapter(Context context, ArrayList<HoaDon> listBill) {
+        super(context, 0, listBill);
+        mContext = context;
+        mListBill = listBill;
     }
-
-    @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    public class BillViewHolder extends RecyclerView.ViewHolder {
-        public BillViewHolder(@NonNull ViewGroup parent) {
-            super(parent);
-        }
-    }
-
-
 }

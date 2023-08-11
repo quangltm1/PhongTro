@@ -10,7 +10,7 @@ public class TaiKhoan implements Serializable {
     private String matKhau;
     private long phongTroId;
 
-    public TaiKhoan() {
+    public TaiKhoan(long id, String username, String password, long nguoiDungId) {
 
     }
 

@@ -1,271 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HopDongActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageButton
-        android:id="@+id/img_Back_hopdong"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/arrow_back"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="6dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="22dp"
-        />
-    <TextView
-        android:id="@+id/tv_hd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tạo hợp đồng"
-        android:textSize="25dp"
-        android:textAlignment="center"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:gravity="center_horizontal" />
-    <TextView
-        android:id="@+id/tv_thongtin_hd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="   Thông tin"
-        android:textSize="25dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_hd"
-        android:background="@drawable/tieude"
-        />
-    <EditText
-        android:id="@+id/edt_chon_DDCT"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:hint="Chọn đại diện cho thuê"
-        android:textSize="18dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_thongtin_hd"
-        />
-    <ImageButton
-        android:id="@+id/bt_chon_DDCT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/arrow_forward_ios"
-        android:layout_toEndOf="@+id/edt_chon_DDCT"
-        android:layout_toRightOf="@+id/edt_chon_DDCT"
-        android:layout_below="@id/tv_thongtin_hd"
-        android:layout_marginTop="15dp"
-        />
-    <TextView
-        android:id="@+id/tv_phong_HD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phòng :"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/edt_chon_DDCT"/>
-    <EditText
-        android:id="@+id/edt_phong_HD"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập tên phòng"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/edt_chon_DDCT"
-        android:layout_toEndOf="@+id/tv_phong_HD"
-        android:layout_toRightOf="@+id/tv_phong_HD"
-        />
-    <TextView
-        android:id="@+id/tv_ThoiHan_HD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thời hạn "
-        android:textSize="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/edt_phong_HD"/>
+        android:contentDescription="Back"
+        android:src="@drawable/arrow_back" />
 
     <EditText
-        android:id="@+id/edt_TuNgay_HD"
-        android:layout_width="180dp"
+        android:id="@+id/etTenPhong"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Từ ngày"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_ThoiHan_HD"
-        />
+        android:hint="Tên phòng" />
 
     <EditText
-        android:id="@+id/edt_DenNgay_HD"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:hint="Đến ngày"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_ThoiHan_HD"
-        android:layout_toEndOf="@+id/edt_TuNgay_HD"
-        android:layout_toRightOf="@+id/edt_TuNgay_HD" />
-    <TextView
-        android:id="@+id/tv_tp_HD"
+        android:id="@+id/etNgayBatDau"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="   Tiền phòng"
-        android:textSize="25dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/edt_TuNgay_HD"
-        android:background="@drawable/tieude"
-        />
-    <TextView
-        android:id="@+id/tv_TienPhong_HD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tiền phòng"
-        android:textSize="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_tp_HD"/>
+        android:hint="Ngày bắt đầu (dd/mm/yyyy)" />
+
     <EditText
-        android:id="@+id/edt_TienPhong_HD"
+        android:id="@+id/etNgayKetThuc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập tiền phòng"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_tp_HD"
-        android:layout_toEndOf="@+id/tv_TienPhong_HD"
-        android:layout_toRightOf="@+id/tv_TienPhong_HD"
-        android:inputType="number"
-        />
-    <TextView
-        android:id="@+id/tv_TienCoc_HD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tiền cọc"
-        android:textSize="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_TienPhong_HD"/>
+        android:hint="Ngày kết thúc (dd/mm/yyyy)" />
+
     <EditText
-        android:id="@+id/edt_TienCoc_HD"
+        android:id="@+id/etTienDien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập tiền cọc"
-        android:textSize="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="34dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_TienPhong_HD"
-        android:layout_toEndOf="@+id/tv_TienCoc_HD"
-        android:layout_toRightOf="@+id/tv_TienCoc_HD"
-        android:inputType="number"
-        />
-    <TextView
-        android:id="@+id/tv_ttnt_HD"
+        android:hint="Tiền điện" />
+
+    <EditText
+        android:id="@+id/etTienNuoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="   Thông tin người thuê"
-        android:textSize="25dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/edt_TienCoc_HD"
-        android:background="@drawable/tieude"
-        />
-    <TextView
-        android:id="@+id/tv_hoten_NgThue"
-        android:layout_width="300dp"
+        android:hint="Tiền nước" />
+
+    <EditText
+        android:id="@+id/etTienPhong"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_ttnt_HD"/>
-    <TextView
-        android:id="@+id/tv_sdt_NgThue"
-        android:layout_width="300dp"
+        android:hint="Tiền phòng" />
+
+    <EditText
+        android:id="@+id/etTienCoc"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sdt"
-        android:textSize="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_hoten_NgThue"/>
+        android:hint="Tiền cọc" />
+
+    <EditText
+        android:id="@+id/etTenNguoiThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên người thuê" />
+
+    <EditText
+        android:id="@+id/etCCCDNguoiThue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CCCD người thuê" />
+
+    <EditText
+        android:id="@+id/etTenChuTro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên chủ trọ" />
+
+    <EditText
+        android:id="@+id/etCCCDChuTro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CCCD chủ trọ" />
+
+    <EditText
+        android:id="@+id/etNoiDungHopDong"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Nội dung hợp đồng" />
 
     <Button
-        android:id="@+id/btn_add_building"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_below="@id/tv_sdt_NgThue"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="-53dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/circle_button"
-        android:text="+"
-        android:textSize="20dp"
-        app:backgroundTint="@color/teal_200" />
-    <TextView
-        android:id="@+id/tv_mt_ngthue"
+        android:id="@+id/btnTaoHopDong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Điều khoản hợp đồng"
-        android:textSize="20sp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_below="@+id/tv_sdt_NgThue"
-        android:textColor="@color/black"
-        />
+        android:text="Tạo hợp đồng" />
 
-    <EditText
-        android:id="@+id/tv_mo_ta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/hop"
-        android:textSize="20sp"
-        android:hint="  Nhập điều khoản hợp đồng"
-        android:textColor="#BBBBBB"
-        android:layout_marginTop="5dp"
-        android:lines="4"
-        android:maxLines="6"
-        android:inputType="textMultiLine"
-        android:gravity="left|top"
-        android:layout_below="@+id/tv_mt_ngthue"
-        />
-
-
-        <Button
-        android:id="@+id/bt_Tao_Hop_Dong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/hop"
-        android:text="TẠO HỢP ĐỒNG"
-        android:layout_marginBottom="20dp"
-        android:textSize="20dp"
-        app:backgroundTint="@color/teal_200"
-        android:layout_alignParentBottom="true"
-        />
-
-
-</RelativeLayout>
+</LinearLayout>

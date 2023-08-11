@@ -17,12 +17,11 @@ import android.widget.TextView;
 import com.example.demoappnhatro.BillActivity;
 import com.example.demoappnhatro.Database.DBHelper;
 import com.example.demoappnhatro.Database.Database;
+import com.example.demoappnhatro.AddHopDongActivity;
 import com.example.demoappnhatro.HopDongActivity;
 import com.example.demoappnhatro.NguoiThueActivity;
 import com.example.demoappnhatro.R;
-import com.example.demoappnhatro.SoNoActivity;
 import com.example.demoappnhatro.SuCoActivity;
-import com.example.demoappnhatro.TienCocActivity;
 
 import java.util.Calendar;
 
@@ -36,7 +35,7 @@ public class HomeFragment extends Fragment {
 
     TextView sophongtrong, sophong, nguoithue, textView;
     RelativeLayout relativeLayout;
-    ImageButton btnTienCoc, btnSuCo, btnSoNo, btnNguoiThue, btnBill, btnHopDong;
+    ImageButton btnSuCo, btnNguoiThue, btnBill, btnHopDong;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -133,9 +132,7 @@ public class HomeFragment extends Fragment {
         btnBill = view.findViewById(R.id.bt_bill);
         btnHopDong = view.findViewById(R.id.bt_HopDong);
         btnNguoiThue = view.findViewById(R.id.bt_nguoi_thue);
-        btnSoNo = view.findViewById(R.id.bt_so_no);
-        btnSuCo = view.findViewById(R.id.bt_su_co);
-        btnTienCoc = view.findViewById(R.id.bt_TienCoc);
+        btnSuCo = view.findViewById(R.id.bt_TienCoc);
 
         // Khởi tạo instance của class Database
         Database database = new Database(getActivity());
@@ -197,24 +194,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        btnSoNo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), SoNoActivity.class));
-            }
-        });
-
         btnSuCo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), SuCoActivity.class));
-            }
-        });
-
-        btnTienCoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), TienCocActivity.class));
             }
         });
 

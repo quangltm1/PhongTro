@@ -5,6 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ThongTinHopDongActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <TextView
         android:id="@+id/tv_tthd"
         android:layout_width="match_parent"
@@ -15,40 +22,30 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
         android:gravity="center_horizontal" />
-    <EditText
-        android:id="@+id/tv_ma_tthd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="mã hợp đồng"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/tv_tthd"/>
 
     <ImageView
         android:id="@+id/img_home_tt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_ma_tthd"
+        android:layout_below="@+id/img_Back_hopdong_tt"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/img_phong" />
 
-    <EditText
+    <TextView
         android:id="@+id/tv_TenPhong_HD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tthd"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="14dp"
         android:layout_toEndOf="@+id/img_home_tt"
-        android:layout_below="@+id/tv_ma_tthd"
         android:layout_toRightOf="@+id/img_home_tt"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="10dp"
         android:hint="name phòng"
-        android:textSize="20dp"
-        android:textColor="@color/black"
         android:padding="6dp"
-        />
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <ImageView
         android:id="@+id/img_calender_den_tt"
@@ -59,7 +56,7 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/calendar" />
 
-    <EditText
+    <TextView
         android:id="@+id/tv_calender_den_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,7 +79,7 @@
         android:layout_marginTop="9dp"
         android:background="@drawable/calendar" />
 
-    <EditText
+    <TextView
         android:id="@+id/tv_calender_di_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,8 +104,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/nguoitao" />
 
-    <EditText
-        android:id="@+id/tv_nguoi_tao_tt"
+    <TextView
+        android:id="@+id/tv_nguoithue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/img_nguoi_tao_tt"
@@ -116,69 +113,182 @@
         android:layout_toRightOf="@+id/img_nguoi_tao_tt"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
-        android:hint="Người tạo"
+        android:hint="Người thue"
         android:textSize="20dp"
         android:padding="6dp"
         />
     <ImageView
-        android:id="@+id/img_gp_tt"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_below="@+id/img_nguoi_tao_tt"
+        android:id="@+id/img_nguoi_tao_tt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nguoithue"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/tien_coc" />
+        android:background="@drawable/nguoitao" />
 
-    <EditText
-        android:id="@+id/edt_gia_thue_tt"
+    <TextView
+        android:id="@+id/tv_cccdnguoithue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/img_nguoi_tao_tt"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
         android:layout_below="@+id/img_nguoi_tao_tt"
-        android:layout_toRightOf="@+id/img_nguoi_tao_tt"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
-        android:hint="Giá phòng"
+        android:hint="CCCD Người thue"
         android:textSize="20dp"
         android:padding="6dp"
         />
 
-    <EditText
-        android:id="@+id/HoTen_NgThue_tt"
+    <ImageView
+        android:id="@+id/img_nguoi_tao_tt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_nguoi_tao_tt2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/nguoitao" />
+
+    <TextView
+        android:id="@+id/tv_nguoithue2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/img_gp_tt"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/img_nguoi_tao_tt2"
         android:layout_marginLeft="10dp"
-        android:hint="Họ và Tên người thuê"
-        />
-    <EditText
-        android:id="@+id/edt_sdt_NgThue_tt"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt"
+        android:hint="Chu Tro"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/img_nguoi_tao_tt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_nguoi_tao_tt3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/nguoitao" />
+
+    <TextView
+        android:id="@+id/tv_cccdnguoithue2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/HoTen_NgThue_tt"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/img_nguoi_tao_tt3"
         android:layout_marginLeft="10dp"
-        android:hint="SĐT "
-        />
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
+        android:hint="CCCD Chu Tro"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/img_gp_tt"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/img_nguoi_tao_tt4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tien_coc" />
+
+    <TextView
+        android:id="@+id/tv_gia_thue_tt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_nguoi_tao_tt4"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
+        android:hint="Giá phòng"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/img_gp_tt2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/img_gp_tt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tien_coc" />
+
+    <TextView
+        android:id="@+id/tv_gia_thue_tt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_gp_tt"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
+        android:hint="Tien Coc"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/img_gp_tt3"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/img_gp_tt2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tien_coc" />
+
+    <TextView
+        android:id="@+id/tv_gia_thue_tt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_gp_tt2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
+        android:hint="Tien Dien"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/img_gp_tt4"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@id/img_gp_tt3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tien_coc" />
+
+    <TextView
+        android:id="@+id/tv_gia_thue_tt4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_gp_tt3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_nguoi_tao_tt2"
+        android:layout_toRightOf="@+id/img_nguoi_tao_tt2"
+        android:hint="Tien Nuoc"
+        android:padding="6dp"
+        android:textSize="20dp" />
+
     <TextView
         android:id="@+id/mota_ngThue_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edt_sdt_NgThue_tt"
-        android:text="Mô tả:"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/img_gp_tt4"
         android:layout_marginLeft="10dp"
-        />
-    <EditText
+        android:layout_marginTop="10dp"
+        android:text="Nội dung:"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+    <TextView
         android:id="@+id/edt_mota_NgThue_tt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/hop"
         android:textSize="20dp"
-        android:hint="  Nhập mô tả phòng"
+        android:hint="  Noi dung hopdong"
         android:layout_below="@+id/mota_ngThue_tt"
         android:textColor="#BBBBBB"
         android:layout_marginTop="10dp"
@@ -231,5 +341,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="22dp"
         />
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
